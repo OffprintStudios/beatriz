@@ -6,11 +6,10 @@
 extern crate serenity;
 extern crate tokio;
 extern crate dotenv;
-extern crate dotenv_codegen;
+#[macro_use] extern crate dotenv_codegen;
 
 mod general;
 
-use std::env;
 use serenity::async_trait;
 use serenity::client::{Client, EventHandler};
 use serenity::framework::standard::StandardFramework;
@@ -29,7 +28,7 @@ async fn main() {
         .group(&GENERAL_GROUP);
 
     // Login with a bot token from the environment
-    let token = env::var("DISCORD_TOKEN").expect("token");
+    let token = dotenv!("DISCORD_TOKEN");
     let mut client = Client::new(token)
         .event_handler(Handler)
         .framework(framework)
