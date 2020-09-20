@@ -5,6 +5,8 @@
 
 extern crate serenity;
 extern crate tokio;
+extern crate dotenv;
+extern crate dotenv_codegen;
 
 mod general;
 
