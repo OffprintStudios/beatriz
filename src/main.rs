@@ -8,7 +8,9 @@ extern crate tokio;
 extern crate dotenv;
 #[macro_use] extern crate dotenv_codegen;
 
+mod admin;
 mod general;
+mod fun;
 
 use serenity::async_trait;
 use serenity::client::{Client, EventHandler};
